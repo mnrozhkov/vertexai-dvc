@@ -10,26 +10,26 @@ stages:
     outs:
     - path: data/features.csv
       hash: md5
-      md5: d4bf604068dd1242665343733ebb194d
-      size: 9889
+      md5: 6eaaf8e7e8dbf5d897be2bd484018f5a
+      size: 9907
   train:
     cmd: python src/train.py
     deps:
     - path: data/features.csv
       hash: md5
-      md5: d4bf604068dd1242665343733ebb194d
-      size: 9889
+      md5: 6eaaf8e7e8dbf5d897be2bd484018f5a
+      size: 9907
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 87f5fca0033b983906e7af589e6d94ea
+      md5: 5877c55dfd50d9bec01384534e788b03
       size: 1279
   evaluate:
     cmd: python src/evaluate.py
     deps:
     - path: models/model.pkl
       hash: md5
-      md5: 87f5fca0033b983906e7af589e6d94ea
+      md5: 5877c55dfd50d9bec01384534e788b03
       size: 1279
     outs:
     - path: reports/metrics_report.json
