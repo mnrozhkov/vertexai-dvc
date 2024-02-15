@@ -1,0 +1,21 @@
+stages:
+  data:
+    cmd: python src/prepare_data.py
+    deps:
+      - src/prepare_data.py
+    outs:
+      - data/features.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - data/features.csv
+    outs:
+      - models/model.pkl
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - models/model.pkl
+    metrics:
+      - reports/metrics_report.json

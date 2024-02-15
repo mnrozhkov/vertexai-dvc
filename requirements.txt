@@ -1,0 +1,5 @@
+dvc==3.42.0
+dvclive==3.41.1
+joblib
+pandas
+scikit-learn
