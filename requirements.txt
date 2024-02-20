@@ -1,5 +1,7 @@
-dvc==3.42.0
-dvclive==3.41.1
+dvc[gs]
+dvclive
+google-cloud-storage
 joblib
 pandas
 scikit-learn
+

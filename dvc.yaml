@@ -12,6 +12,10 @@ stages:
       - data/features.csv
     outs:
       - models/model.pkl
+      - gs://dvc-cse/vertexai-dvc/metrics:
+          cache: false
+          persist: true
+
 
   evaluate:
     cmd: python src/evaluate.py
